@@ -1,0 +1,12 @@
+<div id="navtemp" class="panel-body" ng-controller="navigationTemplateCtrl">
+	<ul class="nav nav-pills nav-stacked">
+		<li ng-class="isActive(1)" ng-click="selectNavBar(1)"><a href="#">Jadwal Ruangan</a></li>
+		<li ng-class="isActive(2)" ng-click="selectNavBar(2)" ng-hide="(user.userCode.substring(0,3) == 'UAL' || user.userCode.substring(0,3) == 'UEX')"><a href="#/reservationRequestList">Pengajuan Peminjaman Ruangan</a></li>
+		<li ng-class="isActive(3)" ng-click="selectNavBar(3)"><a href="#/rentRequestList">Pengajuan Penyewaan Ruangan</a></li>
+		<li ng-class="isActive(4)" ng-click="selectNavBar(4)" ng-show="(user.userCode.substring(0,3) == 'UMR')"><a href="#/reservationRequestApprovalList">Persetujuan Peminjaman</a></li>
+		<li ng-class="isActive(5)" ng-click="selectNavBar(5)" ng-show="(user.userCode.substring(0,4) == 'UMRG' || user.userCode.substring(0,3) == 'UMD')"><a href="#/rentRequestApprovalList">Persetujuan Penyewaan</a></li>
+		<li ng-class="isActive(6)" ng-click="selectNavBar(6)" ng-show="(user.userCode.substring(0,3) == 'UMR' || user.userCode.substring(0,3) == 'UMD')"><a href="#/memorandumForm">Memorandum</a></li>
+		<li ng-class="isActive(7)" ng-click="selectNavBar(7)" ng-show="(user.userCode.substring(0,4) == 'UMRG')"><a href="#">Manage Ruangan</a></li>
+		<li ng-class="isActive(8)" ng-click="selectNavBar(8)" ng-show="(user.userCode.substring(0,3) == 'UMR')"><a href="#">Laporan</a></li>
+	</ul>
+</div>

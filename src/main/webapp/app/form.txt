@@ -1,0 +1,58 @@
+<form class="form-horizontal" role="form" ng-submit="openModal('sm',pengajuan)">
+
+						<div class="form-group">
+							<label class="control-label col-md-3" style="text-align:left" for="Unit Kerja">Unit Kerja</label>
+							<div class="col-md-9">
+								<input type="text" class="form-control" ng-model="pengajuan.unitKerja">								
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-md-3" style="text-align:left" for="Tempat Tujuan">Tempat Tujuan</label>
+							<div class="col-md-9">
+								<input type="text" class="form-control" ng-model="pengajuan.tempatTujuan">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-md-3" style="text-align:left" for="Tempat Tujuan">Tanggal Keberangkatan</label>
+							<div class="col-md-4">
+								<p class="input-group">
+									<input type="text" class="form-control" ng-focus="open2()" uib-datepicker-popup ng-model="pengajuan.tanggalBerangkat" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+									<span class="input-group-btn">
+										<button type="button" class="btn btn-default" ng-click = "open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+									</span>
+								</p>
+								<label><a href="#" target="_blank"> cek ketersediaan</a></label>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-md-3" style="text-align:left" for="Tempat Tujuan">Jam Keberangkatan</label>
+							<div class="col-md-4">
+								<timepicker-pop input-time="time1" class="input-group" show-meridian='showMeridian' ng-model="pengajuan.jam">
+								</timepicker-pop>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-md-3" style="text-align:left" for="Alamat Email">Alamat Email</label>
+							<div class="col-md-9">
+								<input type="email" class="form-control" ng-model="pengajuan.email">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-md-3" style="text-align:left" for="Keperluan">Keperluan</label>
+							<div class="col-md-9">
+								<textarea class="form-control" style="resize:none" ng-model="pengajuan.keperluan">
+								</textarea>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-md-offset-9 col-md-3">
+								<button type="submit" class="btn btn-default alert alert-success">Ajukan</button>
+								<button type="reset" class="btn btn-default alert alert-danger">Batal</button>
+							</div>
+						</div>
+					</form>
