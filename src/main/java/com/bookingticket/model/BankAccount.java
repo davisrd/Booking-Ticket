@@ -18,6 +18,7 @@ import javax.persistence.Table;
 public class BankAccount {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "account_id")
 	private int accountId;
 	
 	@Column(name = "account_balance", nullable = false)

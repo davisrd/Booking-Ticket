@@ -26,6 +26,7 @@ public class Schedule {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "schedule_id")
 	private int scheduleId;
 
 	@Column(name = "schedule_date", nullable = false)
@@ -36,7 +37,7 @@ public class Schedule {
 	private int studioNumber;
    
 	@ManyToOne
-	@JoinColumn(name = "movieId")
+	@JoinColumn(name = "movie_id")
 	private Movie movie;
 
 	public Schedule(){
@@ -57,7 +58,7 @@ public class Schedule {
 		this.scheduleId = scheduleId;
 	}
 	
-	@JsonFormat(pattern="dd-MM-yyyy")
+	@JsonFormat(pattern="dd-MM-yyyy hh:mm:ss")
 	public Date getScheduleDate() {
 		return scheduleDate;
 	}

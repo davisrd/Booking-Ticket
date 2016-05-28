@@ -24,13 +24,15 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 @Table(name = "booking")
 public class Booking {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "booking_id", unique = true, nullable = false)
+	@Column(name = "booking_id")
 	private int bookingId;
 
 	@Column(name = "booking_date", nullable = false)
@@ -38,7 +40,7 @@ public class Booking {
 	private Date bookingDate;
    
 	@ManyToOne
-	@JoinColumn(name = "customerId")
+	@JoinColumn(name = "customer_id")
 	private Customer customer;
 
 	@Column(name = "price", nullable = false)
@@ -52,7 +54,7 @@ public class Booking {
 	private Set<Seat> seats = new HashSet<Seat>(0);
 
 	@ManyToOne
-	@JoinColumn(name = "scheduleId")
+	@JoinColumn(name = "schedule_id")
 	private Schedule schedule;
 
 	public Booking(){
@@ -75,6 +77,7 @@ public class Booking {
 		this.bookingId = bookingId;
 	}
 	
+	@JsonFormat(pattern="dd-MM-yyyy hh:mm:ss")
 	public Date getBookingDate() {
 		return bookingDate;
 	}

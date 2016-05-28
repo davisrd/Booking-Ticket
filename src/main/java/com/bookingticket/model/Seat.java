@@ -19,6 +19,7 @@ public class Seat {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "seat_id")
 	private int seatId;
 
 	@Column(name = "seat_number", unique = true, nullable = false)

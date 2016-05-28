@@ -20,6 +20,7 @@ import javax.persistence.Table;
 public class Customer {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "customer_id")
 	private int customerId;
 	
 	@Column(name = "customer_name", nullable = false)
@@ -32,7 +33,7 @@ public class Customer {
 	private String customerPassword;
    
 	@ManyToOne
-	@JoinColumn(name = "accountId")
+	@JoinColumn(name = "account_id")
 	private BankAccount account;
    
 	/*Default Constructor*/
